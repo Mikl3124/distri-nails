@@ -16,9 +16,7 @@ class RedirectIfInstalled
     public function handle($request, Closure $next)
     {
         if (config('app.installed')) {
-            // return redirect()->route('home');
-            return redirect()->route('install.pre_installation');
-
+            return redirect()->route('home');
         }
 
         return $next($request);
