@@ -59,7 +59,7 @@ class InstallController extends Controller
     public function complete()
     {
         if (config('app.installed')) {
-            return redirect()->route('home');
+          return view('install.pre_installation', compact('requirement'));
         }
 
         DotenvEditor::setKey('APP_INSTALLED', 'true')->save();
